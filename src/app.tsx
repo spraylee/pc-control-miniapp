@@ -15,6 +15,13 @@ import './app.less'
 //   require('nerv-devtools')
 // }
 
+// import icon from './assets/音乐.png'
+// import icon2 from './assets/音乐2.png'
+// import icon3 from './assets/游戏.png'
+// import icon4 from './assets/游戏2.png'
+
+// console.log(icon4)
+
 const store = {
   counterStore,
 }
@@ -31,8 +38,18 @@ class App extends Component {
     pages: ['pages/index/index', 'pages/mouse/index'],
     tabBar: {
       list: [
-        { text: '播放', pagePath: 'pages/index/index' },
-        { text: '鼠标', pagePath: 'pages/mouse/index' },
+        {
+          text: '播放',
+          pagePath: 'pages/index/index',
+          iconPath: './assets/音乐2.png',
+          selectedIconPath: './assets/音乐.png',
+        },
+        {
+          text: '鼠标',
+          pagePath: 'pages/mouse/index',
+          iconPath: './assets/游戏2.png',
+          selectedIconPath: './assets/游戏.png',
+        },
       ],
     },
     window: {
