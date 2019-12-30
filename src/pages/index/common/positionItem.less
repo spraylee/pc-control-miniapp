@@ -1,0 +1,32 @@
+.position-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  > View {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    flex: none;
+  }
+}
+.btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  border-radius: 5%;
+  // background-color: #ccc;
+  padding: 1px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  &:active {
+    background-color: #ccc;
+  }
+}

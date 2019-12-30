@@ -7,18 +7,7 @@ import { useService } from '../../service'
 import { MaterialIcons } from 'taro-icons'
 
 import './index.less'
-import './index.scss'
 import { sleep } from '../../utils/sleep'
-import { PositionItem } from './common/positionItem'
-
-// type PageStateProps = {
-//   counterStore: {
-//     counter: number
-//     increment: Function
-//     decrement: Function
-//     incrementAsync: Function
-//   }
-// }
 
 const IndexPage: Taro.FC = props => {
   const { counter } = counterStore
@@ -55,25 +44,29 @@ const IndexPage: Taro.FC = props => {
   return (
     <View className="index">
       {/* {Loading} */}
-      <PositionItem top="60px" left="80px" onClick={pressKey('audio_mute')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="volume-off" />
-      </PositionItem>
-      <PositionItem top="60px" right="160px" onClick={pressKey('audio_vol_down')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="volume-down" />
-      </PositionItem>
-      <PositionItem top="60px" right="80px" onClick={pressKey('audio_vol_up')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="volume-up" />
-      </PositionItem>
-
-      <PositionItem top="50%" left="calc(50% - 80px)" onClick={pressKey('audio_prev')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="skip-previous" />
-      </PositionItem>
-      <PositionItem top="50%" left="50%" onClick={pressKey('audio_play')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="pause-circle-filled" />
-      </PositionItem>
-      <PositionItem top="50%" left="calc(50% + 80px)" onClick={pressKey('audio_next')}>
-        <MaterialIcons className="icon" size={28} color="#333" name="skip-next" />
-      </PositionItem>
+      <View className="move-mouse">
+        <View className="row-center">
+          <View className="btn" onTouchStart={moveMouse(0, -100)}>
+            <MaterialIcons className="icon" size={28} color="#333" name="keyboard-arrow-up" />
+          </View>
+        </View>
+        <View className="row-center">
+          <View className="btn" onTouchStart={moveMouse(-100, 0)}>
+            <MaterialIcons className="icon" size={28} color="#333" name="keyboard-arrow-left" />
+          </View>
+          <View className="btn" onTouchStart={clickMouse}>
+            <MaterialIcons className="icon" size={28} color="#333" name="mouse" />
+          </View>
+          <View className="btn" onTouchStart={moveMouse(100, 0)}>
+            <MaterialIcons className="icon" size={28} color="#333" name="keyboard-arrow-right" />
+          </View>
+        </View>
+        <View className="row-center">
+          <View className="btn" onTouchStart={moveMouse(0, 100)}>
+            <MaterialIcons className="icon" size={28} color="#333" name="keyboard-arrow-down" />
+          </View>
+        </View>
+      </View>
     </View>
   )
 }

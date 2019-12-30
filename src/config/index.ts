@@ -1,1 +1,1 @@
-export const baseServicePath = `http://192.168.1.193:3000/robot/`
+export const baseServicePath = `http://192.168.1.101:3000/robot/`
