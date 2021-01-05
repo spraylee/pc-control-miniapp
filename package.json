@@ -42,7 +42,7 @@
     "@tarojs/taro-swan": "2.0.0-beta.12",
     "@tarojs/taro-tt": "2.0.0-beta.12",
     "@tarojs/taro-weapp": "2.0.0-beta.12",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "axios-miniprogram-adapter": "^0.2.4",
     "babel-runtime": "^6.26.0",
     "flyio": "^0.6.14",
